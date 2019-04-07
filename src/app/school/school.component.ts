@@ -5,6 +5,8 @@ import { NgForm } from '@angular/forms';
 import { SchoolService } from '../shared/school.service';
 import { School } from '../shared/school.model';
 
+declare var M: any;
+
 @Component({
   selector: 'app-school',
   templateUrl: './school.component.html',
@@ -19,8 +21,11 @@ export class SchoolComponent implements OnInit {
     this.resetForm();
   }
   resetForm(form?: NgForm) {
-    if (form) 
+    if (form) {
+      console.log('the form value is ');
+      console.log(form.value);
       form.reset();
+    }
     this.schoolService.schoolSelected = {
       _id: '',
       name: '',
@@ -31,6 +36,18 @@ export class SchoolComponent implements OnInit {
       Owner: '',
       Slogan: '',
       Logo: ''
+    };
+  }
+
+  onSubmit(form: NgForm) {
+    if (form.value._id == "") {
+      this.schoolService.postEmployee(form.value).subscribe((res) => {
+        this.resetForm(form);
+        //this.refreshEmployeeList();
+        M.toast({ html: 'Saved successfully', classes: 'rounded' });
+      });
     }
   }
+
+
 }

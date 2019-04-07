@@ -12,6 +12,23 @@ import { School } from './school.model';
 export class SchoolService {
   schoolSelected: School;
   schools: School[];
+  readonly baseURL = 'http://localhost:3010/api/school';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  postEmployee(sch: School) {
+    console.log('before calling the API, the request is' + sch);
+    return this.http.post(this.baseURL, sch);
+  }
+/*
+  getEmployeeList() {
+    return this.http.get(this.baseURL);
+  }
+
+  putEmployee(emp: Employee) {
+    return this.http.put(this.baseURL + `/${emp._id}`, emp);
+  }
+
+  deleteEmployee(_id: string) {
+    return this.http.delete(this.baseURL + `/${_id}`);
+  }*/
 }

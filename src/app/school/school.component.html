@@ -5,54 +5,54 @@
         <div class="row">
           <div class="col s5">
             <form #schoolForm="ngForm" (ngSubmit)="onSubmit(schoolForm)">
-              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="schoolService.selectedSchool._id">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="schoolService.schoolSelected._id">
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="name" #name="ngModel" [(ngModel)]="schoolService.selectedSchool.name" placeholder="Enter full name" required>
-                  <label>School Name :
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="schoolService.schoolSelected.name" placeholder="Enter full name" required>
+                  <label>Name :
                     <label class="red-text">*</label>
                   </label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="address" #name="ngModel" [(ngModel)]="schoolService.selectedSchool.Address" placeholder="Enter Address....">
+                  <input type="text" name="address" #name="ngModel" [(ngModel)]="schoolService.schoolSelected.Address" placeholder="Enter Address">
                   <label>Address :</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="city" #name="ngModel" [(ngModel)]="schoolService.selectedSchool.City" placeholder="Enter City">
+                  <input type="text" name="city" #name="ngModel" [(ngModel)]="schoolService.schoolSelected.City" placeholder="Enter city">
                   <label>City :</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="telephone" #name="ngModel" [(ngModel)]="schoolService.selectedSchool.Telephone" placeholder="Enter telephone number">
+                  <input type="text" name="telephone" #name="ngModel" [(ngModel)]="schoolService.schoolSelected.Telephone" placeholder="Enter telephone number">
                   <label>Telephone :</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="email" #name="ngModel" [(ngModel)]="schoolService.selectedSchool.Email" placeholder="Enter email address">
+                  <input type="text" name="email" #name="ngModel" [(ngModel)]="schoolService.schoolSelected.Email" placeholder="Enter email address">
                   <label>Email :</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="owner" #name="ngModel" [(ngModel)]="schoolService.selectedSchool.Owner" placeholder="Enter owner Name">
+                  <input type="text" name="owner" #name="ngModel" [(ngModel)]="schoolService.schoolSelected.Owner" placeholder="Enter owners name">
                   <label>Owner :</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="slogan" #name="ngModel" [(ngModel)]="schoolService.selectedSchool.Slogan" placeholder="Enter school's slogan">
+                  <input type="text" name="slogan" #name="ngModel" [(ngModel)]="schoolService.schoolSelected.Slogan" placeholder="Enter school's slogan">
                   <label>Slogan :</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="logo" #name="ngModel" [(ngModel)]="schoolService.selectedSchool.Logo" placeholder="Upload school logo">
+                  <input type="text" name="logo" #name="ngModel" [(ngModel)]="schoolService.schoolSelected.Logo" placeholder="Enter school's logo">
                   <label>Logo :</label>
                 </div>
               </div>
@@ -69,17 +69,15 @@
                   <thead>
                     <tr>
                       <th>Name</th>
-                      <th>Telephone</th>
-                      <th>Email</th>
-                      <th>Owner</th>
+                      <th>Position</th>
+                      <th>Office</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tr *ngFor="let sch of schoolService.schools">
-                    <td>{{sch.name}}</td>
-                    <td>{{sch.Telephone}}</td>
-                    <td>{{sch.Email}}</td>
-                    <td>{{sch.Owner}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.position}}</td>
+                    <td>{{emp.office}}</td>
                     <td>
                         <a class="action-btn" (click)="onEdit(sch)">
                           <i class="material-icons">edit</i>
@@ -97,4 +95,3 @@
   </div>
 
 </div>
-
