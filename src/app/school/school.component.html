@@ -69,15 +69,15 @@
                   <thead>
                     <tr>
                       <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
+                      <th>Email</th>
+                      <th>Owner</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tr *ngFor="let sch of schoolService.schools">
-                    <td>{{emp.name}}</td>
-                    <td>{{emp.position}}</td>
-                    <td>{{emp.office}}</td>
+                    <td>{{sch.name}}</td>
+                    <td>{{sch.Email}}</td>
+                    <td>{{sch.Owner}}</td>
                     <td>
                         <a class="action-btn" (click)="onEdit(sch)">
                           <i class="material-icons">edit</i>

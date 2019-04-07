@@ -16,19 +16,20 @@ export class SchoolService {
 
   constructor(private http: HttpClient) { }
   postEmployee(sch: School) {
-    console.log('before calling the API, the request is' + sch);
+    alert(sch.name +" succesfully saved!");
+    console.log('before calling the API, the request is' + sch.name);
     return this.http.post(this.baseURL, sch);
   }
-/*
+
   getEmployeeList() {
     return this.http.get(this.baseURL);
   }
 
-  putEmployee(emp: Employee) {
-    return this.http.put(this.baseURL + `/${emp._id}`, emp);
+  putEmployee(sch: School) {
+    return this.http.put(this.baseURL + `/${sch._id}`, sch);
   }
 
   deleteEmployee(_id: string) {
     return this.http.delete(this.baseURL + `/${_id}`);
-  }*/
+  }
 }
